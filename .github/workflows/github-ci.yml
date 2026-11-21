@@ -16,16 +16,16 @@ jobs:
 
       - name: Clean host environment
         run: |
-          if [ "$(sudo docker ps -aq -f name=go-demo-container)" ]; then
-            sudo docker stop go-demo-container
-            sudo docker rm go-demo-container
+          if [ "$(docker ps -aq -f name=go-demo-container)" ]; then
+            docker stop go-demo-container
+            docker rm go-demo-container
           fi
 
       - name: Compile Docker Image
-        run: sudo docker build --pull -t go-demo-app:latest .
+        run: docker build --pull -t go-demo-app:latest .
 
       - name: Deploy New Container
-        run: sudo docker run -d --name go-demo-container -p 8888:8888 --restart always go-demo-app:latest
+        run: docker run -d --name go-demo-container -p 8888:8888 --restart always go-demo-app:latest
 
       - name: Integration Integration Test Health Check
         run: |
