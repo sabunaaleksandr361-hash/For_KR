@@ -37,7 +37,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	</head>
 	<body>
 		<div class="container">
-			<h1>Система мониторинга Go Runtime</h1>
+			<h1>Система мониторинга Go+++ Runtime</h1>
 			<p>Инфраструктура развернута автоматически в среде WSL2 через локальный Self-Hosted раннер GitHub Actions по стратегии GitHub Flow.</p>
 			<table class="metrics-table">
 				<tr><td class="label">Состояние рантайма</td><td><span class="status-badge">ONLINE</span></td></tr>
